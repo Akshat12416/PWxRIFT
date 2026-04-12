@@ -16,7 +16,7 @@ export default function ManufacturerLogin() {
     const checkWhitelist = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/manufacturer/${activeAccount.address}`
+          `https://taginriftbackend1.onrender.com/api/manufacturer/${activeAccount.address}`
         )
 
         if (res.data.allowed) {
