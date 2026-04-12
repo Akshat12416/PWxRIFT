@@ -22,6 +22,7 @@ signer = AccountTransactionSigner(private_key)
 # Add Whitelist
 # ─────────────────────────────
 def add_to_whitelist(address):
+    from algosdk.encoding import decode_address
     params = algod_client.suggested_params()
     atc = AtomicTransactionComposer()
     
@@ -33,7 +34,8 @@ def add_to_whitelist(address):
         sender=sender,
         sp=params,
         signer=signer,
-        method_args=[address]
+        method_args=[address],
+        boxes=[(APP_ID, b"WL_" + decode_address(address))]
     )
     
     print("Sending transaction...")
@@ -45,6 +47,7 @@ def add_to_whitelist(address):
 # Remove Whitelist
 # ─────────────────────────────
 def remove_from_whitelist(address):
+    from algosdk.encoding import decode_address
     params = algod_client.suggested_params()
     atc = AtomicTransactionComposer()
     
@@ -56,7 +59,8 @@ def remove_from_whitelist(address):
         sender=sender,
         sp=params,
         signer=signer,
-        method_args=[address]
+        method_args=[address],
+        boxes=[(APP_ID, b"WL_" + decode_address(address))]
     )
     
     print("Sending transaction...")
@@ -66,5 +70,5 @@ def remove_from_whitelist(address):
 
 if __name__ == "__main__":
     # Example usage:
-    test_address = "EMKJ5AMYYB6XZTNDXWU6M2NTYQY7ZPPSLSSMALZHAXOUWOPTDNVJ5UUBFA"
+    test_address = "HK4U4NCRSHZGR6KBNZMC56YLY2G5KCYRPE6PMYMD3E26W22XACINXICBCM"
     add_to_whitelist(test_address)

@@ -4,7 +4,7 @@ import hashlib
 import base64
 from algosdk.v2client import algod, indexer
 from algosdk import account, transaction
-from algosdk.encoding import encode_address
+from algosdk.encoding import encode_address, decode_address
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -205,7 +205,8 @@ def add_manufacturer(address: str):
         sender=sender,
         sp=params,
         signer=signer,
-        method_args=[address]
+        method_args=[address],
+        boxes=[(APP_ID, b"WL_" + decode_address(address))]
     )
 
     atc.execute(algod_client, 4)
