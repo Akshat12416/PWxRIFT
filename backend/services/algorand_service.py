@@ -15,7 +15,7 @@ ALGOD_TOKEN = ""
 INDEXER_ADDRESS = "https://testnet-idx.algonode.cloud"
 INDEXER_TOKEN = ""
 
-APP_ID = int(os.getenv("APP_ID"))
+APP_ID = 758713172
 
 algod_client = algod.AlgodClient(ALGOD_TOKEN, ALGOD_ADDRESS)
 indexer_client = indexer.IndexerClient(INDEXER_TOKEN, INDEXER_ADDRESS)
@@ -175,7 +175,7 @@ def get_asset_metadata_hash(asset_id):
 def is_whitelisted(address: str):
 
     try:
-        box_name = b"WL_" + address.encode()
+        box_name = b"WL_" + decode_address(address)
 
         box = algod_client.application_box_by_name(APP_ID, box_name)
 
