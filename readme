@@ -17,8 +17,8 @@ Frontend:
 👉 https://tag-in-rift.vercel.app
 Backend API:
 👉 https://taginriftbackend1.onrender.com
-LinkedIn Post: 
-👉 https://www.linkedin.com/feed/update/urn:li:activity:7432118671189381120/?originTrackingId=QhKvssC2filfbvsZ2lnGSg%3D%3D
+YouTube Video:
+👉 https://youtu.be/sEzMfpk7VME
 
 
 Problem Statement
@@ -111,6 +111,12 @@ Display only valid product NFTs
 View transfer history
 Transfer ownership
 
+7️⃣ Premium UI & Experience
+Bento Grid Design System
+Cursor-following dynamic preloader animations
+Seamless scroll transitions & micro-interactions
+Professional, bold, and modern aesthetic layout
+
 Tech Stack
 
 Frontend
@@ -123,36 +129,36 @@ Axios
 Canvas Confetti
 
 Deployed on:
-frontend : Vercel
-Backend : render
-Python (Flask)
-MongoDB Atlas 
-Py-Algorand-SDK
-Gunicorn (production server)
+Frontend: Vercel
+Backend: Render
+Python (Flask), MongoDB Atlas, Py-Algorand-SDK, Gunicorn
 
-Deployed on:
-Render
-Blockchain : Algorand Testnet
+Blockchain: Algorand Testnet
+Smart Contract App ID: 758713172
+Deployment TxID: 54QIQ2WPXFYXEEEYUEH5J6ZMKTIGUBASDJS4SSPYQXQATVP4U6CQ
 Smart Contract with Box Storage
 ASA NFT minting
 On-chain metadata verification
 
 📂 Project Structure
 frontend/
-  ├── pages/
-  │   ├── Verify.jsx
-  │   ├── RegisterProduct.jsx
-  │   ├── Inventory.jsx
-  │   ├── TransferHistory.jsx
-  │   ├── ManufacturerLogin.jsx
-  │   └── UserLogin.jsx
-  └── App.jsx
+  ├── src/
+  │   ├── pages/
+  │   │   ├── Verify.jsx
+  │   │   ├── RegisterProduct.jsx
+  │   │   ├── Inventory.jsx
+  │   │   ├── TransferHistory.jsx
+  │   │   ├── ManufacturerLogin.jsx
+  │   │   └── UserLogin.jsx
+  │   ├── components/
+  │   └── App.jsx
 
 backend/
   ├── app.py
   ├── routes/
-  ├── models/
-  └── requirements.txt
+  └── models/
+
+requirements.txt
 
 🔐 Security Design
 Tamper Prevention
